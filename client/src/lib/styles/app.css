@@ -1,0 +1,35 @@
+@import url('./css-reset.css');
+@import 'tailwindcss';
+
+html {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #cdd6f4;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+  font-family: 'InterVariable', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+}
+
+pre {
+  border-radius: 6px;
+  padding: 10px;
+  width: 90%;
+  align-self: center;
+  overflow: scroll;
+}
+
+pre code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.cm-content * {
+  font-family: 'JetBrains Mono', monospace;
+}
+.cm-gutters * {
+  background-color: #24273a;
+}
+.cm-foldGutter * {
+  display: none;
+}
