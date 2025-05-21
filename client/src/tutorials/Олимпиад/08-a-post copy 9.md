@@ -1,9 +1,9 @@
 ---
-title: post
+title: Graph
 description: post
 ---
 
-# Topological Sort
+
 
 
 To review, a directed graph consists of edges that can only be traversed in one direction. Additionally, an acyclic graph defines a graph which does not contain cycles, meaning you are unable to traverse across one or more edges and return to the node you started on. Putting these definitions together, a directed ```vector``` acyclic graph, sometimes abbreviated as DAG, is a graph which has edges which can only be traversed in one direction and does not contain cycles.
