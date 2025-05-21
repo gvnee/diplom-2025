@@ -1,0 +1,5 @@
+test.c: In function 'main':
+test.c:2:14: error: implicit declaration of function 'print'; did you mean 'printf'? [-Wimplicit-function-declaration]
+    2 | int main() { print("test"); }
+      |              ^~~~~
+      |              printf

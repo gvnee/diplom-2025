@@ -1,10 +1,9 @@
-export type Categories = 'sveltekit' | 'svelte'
+export type Tutorial = {
+  name: string
+  chapters: Chapter[]
+}
 
-export type Post = {
-	title: string
-	slug: string
-	description: string
-	date: string
-	categories: Categories[]
-	published: boolean
+export type Chapter = {
+  title: string
+  slug: string
 }

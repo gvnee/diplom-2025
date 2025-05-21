@@ -14,7 +14,7 @@
   styles={{
     "&": {
       width: "50vw",
-      height: "calc(100vh - var(--header-height))",
+      height: "calc(100vh - var(--header-height) - var(--submit-height))",
       overflow: "scroll",
       fontSize: "16px",
     },

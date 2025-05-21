@@ -18,6 +18,8 @@ func main() {
 
 	log.Printf("starting server on %s", *addr)
 
+	runC()
+
 	err := http.ListenAndServe(*addr, mux)
 	log.Fatal(err)
 }

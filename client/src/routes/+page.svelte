@@ -1,13 +1,17 @@
 <script>
   let {data} = $props()
 </script>
-
 <section>
-  <ul>
-    {#each data.posts as post}
-    <li>
-      <a href={post.slug}>{post.title}</a>
-    </li>
+  <div class="flex gap-5">
+    {#each data.tutorials as tutorial}
+      <div>
+        <h1 class="text-3xl font-bold text-[var(--green)]"># {tutorial.name}</h1>
+        <ul>
+          {#each tutorial.chapters as chapter}
+            <li> <a href={chapter.slug}>{chapter.title}</a> </li>
+          {/each}
+        </ul>
+      </div>
     {/each}
-  </ul>
+  </div>
 </section>
