@@ -6,4 +6,6 @@ export type Tutorial = {
 export type Chapter = {
   title: string
   slug: string
+  input: string
+  output: string
 }

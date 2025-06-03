@@ -3,11 +3,11 @@
   import {catppuccin} from "codemirror-theme-catppuccin"
   import { cpp } from "@codemirror/lang-cpp";
 
-  let value = $state("")
+  let {value = $bindable(), ...props} = $props()
 </script>
 
 <CodeMirror
-  bind:value
+  bind:value={value} {...props}
   class="editor"
   theme={catppuccin("macchiato")}
   lang={cpp()}

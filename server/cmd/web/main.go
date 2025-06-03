@@ -4,6 +4,8 @@ import (
 	"flag"
 	"log"
 	"net/http"
+
+	"github.com/rs/cors"
 )
 
 func main() {
@@ -14,12 +16,12 @@ func main() {
 	mux.HandleFunc("GET	/{$}", home)
 	mux.HandleFunc("GET	/snippet/view/{id}", snippetView)
 	mux.HandleFunc("GET	/snippet/create", snippetCreate)
-	mux.HandleFunc("POST /snippet/create", snippetCreatePost)
+	mux.HandleFunc("POST /test", test)
 
 	log.Printf("starting server on %s", *addr)
 
-	runC()
+	handler := cors.Default().Handler(mux)
 
-	err := http.ListenAndServe(*addr, mux)
+	err := http.ListenAndServe(*addr, handler)
 	log.Fatal(err)
 }

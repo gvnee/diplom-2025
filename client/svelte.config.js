@@ -2,18 +2,20 @@ import { mdsvex, escapeSvelte } from 'mdsvex';
 import { createHighlighter } from 'shiki';
 import adapter from '@sveltejs/adapter-auto';
 
+const theme = 'catppuccin-macchiato'
+const highlighter = await createHighlighter({
+	themes: [theme],
+	langs: ['cpp']
+})
+
 const mdsvexOptions = {
 	extensions: ['.md'],
 		highlight: {
-		highlighter: async (code, lang = 'text') => {
-			const highlighter = await createHighlighter({
-				themes: ['catppuccin-macchiato'],
-				langs: ['cpp']
-			})
-			await highlighter.loadLanguage('cpp')
-			const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme: 'catppuccin-macchiato' }))
-			return `{@html \`${html}\` }`
-		}
+			highlighter: async (code, lang = 'text') => {
+				await highlighter.loadLanguage('cpp')
+				const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme }))
+				return `{@html \`${html}\` }`
+			}
 	}
 }
 
